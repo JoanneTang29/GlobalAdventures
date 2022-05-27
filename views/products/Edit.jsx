@@ -11,33 +11,34 @@ const linkStyle = {
 };
 class Edit extends React.Component{
    render(){
-    const {products} = this.props;
+    const product = this.props;
+    console.log('this edit product', product);
     return(
         <div style={myStyle}>
             <h1>This is the edit page</h1>
-            <h1>Edit Campground</h1>
-<form action="/campgrounds/<%=campground._id%>?_method=PUT" method="post">
-  <div>
-    <label for="title">Title</label>
-    <input
-      type="text"
-      id="title"
-      name="campground[title]"
-      value="<%=campground.title%>"
-    />
-  </div>
-  <div>
-    <label for="location">Location</label>
-    <input
-      type="text"
-      id="location"
-      name="campground[location]"
-      value="<%=campground.location%>"
-    />
-  </div>
-  <button>Update Products</button>
-</form>
-<a href="/products/:id">Back To Products</a>
+            <h1>Edit Product</h1>
+              <form action={`/products/${product._id}/?_method=PUT"`} method="post">
+                <div>
+                  <label for="title">Title</label>
+                  <input
+                    type="text"
+                    id="title"
+                    name={product.title}
+                    value={product.title}
+                  />
+                </div>
+                <div>
+                  <label for="location">Location</label>
+                  <input
+                    type="text"
+                    id="location"
+                    name={product.location}
+                    value={product.location}
+                  />
+                </div>
+                <button>Update Product</button>
+              </form>
+              <a href={`../${product._id}`}>Back To Product</a>
         </div>
     )
     }

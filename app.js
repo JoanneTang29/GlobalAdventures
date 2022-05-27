@@ -46,19 +46,19 @@ app.get('/products/:id', async (req, res) => {
 
 //products/:id/edit (get)
 app.get('/products/:id/edit', async (req, res) => {
-  console.log('edit page');
-  const products = await Products.findById(req.params.id);
-  res.render('products/Edit', { products });
+  console.log('edit page', req.params.id);
+  const product = await Products.findById(req.params.id);
+  res.render('products/Edit', product);
 });
 
 // Update product
 app.put('/products/:id', async (req, res) => {
   console.log('update products');
-  const { id } = req.params;
-  const products = await Products.findByIdAndUpdate(id, {
-    ...req.body.products,
-  });
-  res.redirect(`/products/${products._id}`);
+  // const { id } = req.params;
+  // const products = await Products.findByIdAndUpdate(id, {
+  //   ...req.body.products,
+  // });
+  // res.redirect(`/products/${products._id}`);
 });
 
 // Delete product
