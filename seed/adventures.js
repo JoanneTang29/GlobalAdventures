@@ -1,6 +1,6 @@
 module.exports = [
   {
-    id: 1,
+    id: 0,
     title: 'Hike',
     location: 'Peru',
     image:
@@ -10,7 +10,7 @@ module.exports = [
     description: 'insert description here',
   },
   {
-    id: 2,
+    id: 1,
     title: 'Snowboard',
     location: 'Japan',
     image:
@@ -20,7 +20,7 @@ module.exports = [
     description: 'Snowboard in Japan!',
   },
   {
-    id: 3,
+    id: 2,
     title: 'Rock Climb',
     location: 'Thailand',
     image:
@@ -30,7 +30,7 @@ module.exports = [
     description: 'Rock climb in Thailand',
   },
   {
-    id: 4,
+    id: 3,
     title: 'Surf',
     location: 'Costa Rica',
     image:
