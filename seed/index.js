@@ -20,7 +20,9 @@ const adventuresDB = async () => {
   }
 };
 
-adventuresDB().then(() => {
-  console.log('db loaded here');
-  // mongoose.connection;
-});
+// adventuresDB().then(() => {
+//   console.log('db loaded here');
+//   // mongoose.connection;
+// });
+
+module.exports = adventuresDB;

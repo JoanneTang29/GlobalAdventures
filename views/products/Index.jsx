@@ -15,8 +15,21 @@ const navStyle = {
     backgroundColor: 'black',
 }
 
-const fontSize = {
+const styleTitle = {
     fontSize: '40px'
+}
+
+const styleLocation = {
+    color: 'gray',
+    fontSize: '30px'
+}
+
+const styleNumber = {
+    color: 'green'
+}
+
+const styleDescription = {
+    fontSize: '20px'
 }
 
 class Index extends React.Component{
@@ -38,12 +51,12 @@ class Index extends React.Component{
             <ul>{products.map((products, i) => {
                 return(
                     <div>
-                    <li><span style={fontSize}>{products.title}</span></li>
-                    <li>{products.location}</li>
+                    <li><span style={styleTitle}>{products.title}</span></li>
+                    <li><span style={styleLocation}>{products.location}</span></li>
                     <li><img src={products.image}></img></li>
-                    <li>{products.price}</li>
-                    <li>{products.stock}</li>
-                    <li>{products.description}</li>
+                    <li><span style={styleNumber}>Price: {products.price}</span></li>
+                    <li><span style={styleNumber}>Stock: {products.stock}</span></li>
+                    <li><span style={styleDescription}>{products.description}</span></li>
                     </div>
                 )
             })}</ul>

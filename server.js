@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 // Import dotenv in order to connect to our database
 const dotenv = require('dotenv');
 
+const adventureDB = require('./seed/index');
+
 // Use dotenv to connect our config file
 dotenv.config({
   path: './config.env',
@@ -21,6 +23,11 @@ const productsDB = mongoose
   });
 
 mongoose.connection.once('open', () => console.log('Connected to Mongo!'));
+
+adventureDB().then(() => {
+  console.log('db loaded here in server');
+  // mongoose.connection;
+});
 
 const port = 3000;
 

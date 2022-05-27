@@ -29,4 +29,14 @@ module.exports = [
     stock: 20,
     description: 'Rock climb in Thailand',
   },
+  {
+    id: 4,
+    title: 'Surf',
+    location: 'Costa Rica',
+    image:
+      'https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80',
+    price: 500,
+    stock: 20,
+    description: 'Surf in Costa Rica',
+  },
 ];
