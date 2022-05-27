@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const products = require('./models/products');
+const Products = require('./models/products');
 
 // // Create a middleware to parse the request body
 // app.use(express.json());
@@ -21,8 +21,9 @@ app.engine('jsx', require('express-react-views').createEngine());
 // app.set('views', path.join(__dirname, 'views'));
 
 //products/
-app.get('/products/', (req, res) => {
-  res.render('products/Index', { products: products });
+app.get('/products/', async (req, res) => {
+  const products = await Products.find({});
+  res.render('products/Index', { products });
 });
 
 //products/new product page
@@ -45,7 +46,7 @@ app.get('/products/:id', (req, res) => {
 //products/:id/edit (get)
 app.get('/products/:id/edit', async (req, res) => {
   console.log('edit page');
-  const products = await products.findById(req.params.id);
+  const products = await Products.findById(req.params.id);
   res.render('products/Edit', { products });
 });
 
