@@ -1,48 +1,70 @@
 const React = require('react');
 
 const myStyle = {
-    color: '#ffffff',
-    backgroundColor: '#e76f51',
-  };
+  color: '#ffffff',
+  backgroundColor: '#e76f51',
+};
 
 const linkStyle = {
-    color: '#bde0fe',
-    fontSize: '15pt',
+  color: '#bde0fe',
+  fontSize: '15pt',
 };
-class Edit extends React.Component{
-   render(){
+class Edit extends React.Component {
+  render() {
     const product = this.props;
-    console.log('this edit product', product);
-    return(
-        <div style={myStyle}>
-            <h1>This is the edit page</h1>
-            <h1>Edit Product</h1>
-              <form action={`/products/${product._id}/?_method=PUT"`} method="post">
-                <div>
-                  <label for="title">Title</label>
-                  <input
-                    type="text"
-                    id="title"
-                    name={product.title}
-                    value={product.title}
-                  />
-                </div>
-                <div>
-                  <label for="location">Location</label>
-                  <input
-                    type="text"
-                    id="location"
-                    name={product.location}
-                    value={product.location}
-                  />
-                </div>
-                <button>Update Product</button>
-              </form>
-              <a href={`../${product._id}`}>Back To Product</a>
-        </div>
-    )
-    }
-};
-
+    // console.log('this edit product', product);
+    return (
+      <div style={myStyle}>
+        <h1>Edit Product</h1>
+        <form action={`/products/${product._id}/?_method=PUT`} method="POST">
+          <div>
+            <label htmlFor="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="product[title]"
+              defaultValue={product.title}
+            />
+          </div>
+          <div>
+            <label htmlFor="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="product[location]"
+              defaultValue={product.location}
+            />
+          </div>
+          <div>
+            <label htmlFor="price">Price per Person</label>
+            <input
+              type="number"
+              id="price"
+              name="product[price]"
+              defaultValue={product.price}
+            />
+          </div>
+          <div>
+            <label htmlFor="stock">Stock</label>
+            <input
+              type="number"
+              id="stock"
+              name="product[stock]"
+              defaultValue={product.stock}
+            />
+          </div>
+          <div>
+            <label htmlFor="description">Description</label>
+            <textarea type="text" id="description" name="product[description]">
+              {product.description}
+            </textarea>
+          </div>
+          <button type="submit">Update Product</button>
+        </form>
+        <a href={`/products/${product._id}`}>Back To Product</a>
+      </div>
+    );
+  }
+}
 
 module.exports = Edit;

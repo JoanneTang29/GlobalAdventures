@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 const Products = require('./models/products');
 
 // // Create a middleware to parse the request body
@@ -15,6 +17,10 @@ const Products = require('./models/products');
 //   .then(() => {
 //     console.log('Database up and running');
 //   });
+
+app.use(methodOverride('_method'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
@@ -33,9 +39,11 @@ app.get('/products/new', (req, res) => {
 
 // Create a new product
 app.post('/products/', async (req, res) => {
-  const products = new Products(req.body.products);
-  await products.save();
-  res.redirect(`/products/${products._id}`);
+  console.log('post for new form', req.body);
+  const product = new Products(req.body.product);
+  console.log('product info', product);
+  await product.save();
+  res.redirect(`/products/${product._id}`);
 });
 
 // Show Product
@@ -46,26 +54,25 @@ app.get('/products/:id', async (req, res) => {
 
 //products/:id/edit (get)
 app.get('/products/:id/edit', async (req, res) => {
-  console.log('edit page', req.params.id);
+  // console.log('edit page', req.params.id);
   const product = await Products.findById(req.params.id);
   res.render('products/Edit', product);
 });
 
 // Update product
 app.put('/products/:id', async (req, res) => {
-  console.log('update products');
-  // const { id } = req.params;
-  // const products = await Products.findByIdAndUpdate(id, {
-  //   ...req.body.products,
-  // });
-  // res.redirect(`/products/${products._id}`);
+  console.log('update products', req.body.product);
+  const product = await Products.findByIdAndUpdate(
+    req.params.id,
+    req.body.product
+  );
+  res.redirect(`/products/${product._id}`);
 });
 
 // Delete product
 app.delete('/products/:id', async (req, res) => {
   console.log('delete');
-  const { id } = req.params;
-  const products = await Products.findByIdAndDelete(id);
+  const product = await Products.findByIdAndDelete(req.params.id);
   res.redirect('/products');
 });
 
