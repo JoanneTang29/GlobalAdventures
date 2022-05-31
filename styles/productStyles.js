@@ -89,6 +89,18 @@ const buttonDelete = {
   fontSize: '16pt',
 };
 
+const textareaStyle = {
+  fontFamily: 'tahoma',
+  width: '200px',
+  height: '100px',
+  marginLeft: '10px',
+};
+
+const inputStyle = {
+  height: '20px',
+  marginLeft: '10px',
+};
+
 module.exports = {
   myStyle,
   navStyle,
@@ -105,4 +117,6 @@ module.exports = {
   formContainer,
   buttonBuy,
   buttonDelete,
+  textareaStyle,
+  inputStyle,
 };

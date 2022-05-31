@@ -13,6 +13,8 @@ const {
   companyName,
   buttonStyle,
   formContainer,
+  textareaStyle,
+  inputStyle,
 } = require('../../styles/productStyles');
 class New extends React.Component {
   render() {
@@ -34,69 +36,41 @@ class New extends React.Component {
           <h1>Add Trip</h1>
           <form action={'/products'} method="POST">
             <div>
-              <label className="form-label" htmlFor="title">
-                Title
-              </label>
-              <input
-                className="form-control"
-                type="text"
-                id="title"
-                name="product[title]"
-              />
+              <label htmlFor="title">Title</label>
+              <input style={inputStyle} type="text" name="product[title]" />
             </div>
             <div>
-              <label className="form-label" htmlFor="location">
-                Location
-              </label>
-              <input
-                className="form-control"
-                type="text"
-                id="location"
-                name="product[location]"
-              />
+              <label htmlFor="location">Location</label>
+              <input style={inputStyle} type="text" name="product[location]" />
             </div>
             <div>
-              <label className="form-label" htmlFor="image">
-                Image Url
-              </label>
-              <input
-                className="form-control"
-                type="text"
-                id="image"
-                name="product[image]"
-              />
+              <label htmlFor="image">Image Url</label>
+              <input style={inputStyle} type="text" name="product[image]" />
             </div>
             <div>
-              <label className="form-label" htmlFor="price">
-                Trip Price
-              </label>
+              <label htmlFor="price">Trip Price</label>
               <span>$</span>
               <input
+                style={inputStyle}
                 type="number"
-                className="form-control"
                 placeholder="0.00"
                 name="product[price]"
               />
             </div>
             <div>
-              <label className="form-label" htmlFor="price">
-                Stock
-              </label>
+              <label htmlFor="price">Stock</label>
               <input
+                style={inputStyle}
                 type="number"
-                className="form-control"
                 placeholder="0"
                 name="product[stock]"
               />
             </div>
             <div>
-              <label className="form-label" htmlFor="description">
-                Description
-              </label>
+              <label htmlFor="description">Description</label>
               <textarea
-                className="form-control"
+                style={textareaStyle}
                 type="text"
-                id="description"
                 name="product[description]"
               ></textarea>
             </div>

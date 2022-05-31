@@ -13,6 +13,8 @@ const {
   companyName,
   buttonStyle,
   formContainer,
+  textareaStyle,
+  inputStyle,
 } = require('../../styles/productStyles');
 class Edit extends React.Component {
   render() {
@@ -32,13 +34,13 @@ class Edit extends React.Component {
           </div>
         </nav>
         <div style={formContainer}>
-          <h1>Edit</h1>
+          <h1>Edit Trip</h1>
           <form action={`/products/${product._id}/?_method=PUT`} method="POST">
             <div>
               <label htmlFor="title">Title</label>
               <input
+                style={inputStyle}
                 type="text"
-                id="title"
                 name="product[title]"
                 defaultValue={product.title}
               />
@@ -46,8 +48,8 @@ class Edit extends React.Component {
             <div>
               <label htmlFor="location">Location</label>
               <input
+                style={inputStyle}
                 type="text"
-                id="location"
                 name="product[location]"
                 defaultValue={product.location}
               />
@@ -55,8 +57,8 @@ class Edit extends React.Component {
             <div>
               <label htmlFor="image">Image</label>
               <input
+                style={inputStyle}
                 type="text"
-                id="image"
                 name="product[image]"
                 defaultValue={product.image}
               />
@@ -64,8 +66,8 @@ class Edit extends React.Component {
             <div>
               <label htmlFor="price">Price</label>
               <input
+                style={inputStyle}
                 type="number"
-                id="price"
                 name="product[price]"
                 defaultValue={product.price}
               />
@@ -73,8 +75,8 @@ class Edit extends React.Component {
             <div>
               <label htmlFor="stock">Stock</label>
               <input
+                style={inputStyle}
                 type="number"
-                id="stock"
                 name="product[stock]"
                 defaultValue={product.stock}
               />
@@ -82,8 +84,8 @@ class Edit extends React.Component {
             <div>
               <label htmlFor="description">Description</label>
               <textarea
+                style={textareaStyle}
                 type="text"
-                id="description"
                 name="product[description]"
               >
                 {product.description}

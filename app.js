@@ -6,34 +6,20 @@ const bodyParser = require('body-parser');
 const Products = require('./models/products');
 // const bootstrap = require('react-bootstrap');
 
-// // Create a middleware to parse the request body
-// app.use(express.json());
-
-// // Create middleware to handle our routes
-// app.use('/api/v1/products', productsRouter);
-
-// // Create a variable to represent our data
-// const globalDB = mongoose
-//   .connect(process.env.DATABASE.replace('<password>', process.env.PASSWORD))
-//   .then(() => {
-//     console.log('Database up and running');
-//   });
-
 app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
-// app.set('views', path.join(__dirname, 'views'));
 
-//products/
+// Index page
 app.get('/products/', async (req, res) => {
   const products = await Products.find({});
   res.render('products/Index', { products });
 });
 
-//products/new product page
+// New products page
 app.get('/products/new', (req, res) => {
   res.render('products/New');
 });
@@ -44,7 +30,7 @@ app.post('/products/', async (req, res) => {
   const product = new Products(req.body.product);
   console.log('product info', product);
   await product.save();
-  res.redirect(`/products/${product._id}`);
+  res.redirect('/products');
 });
 
 // Show Product
@@ -53,7 +39,7 @@ app.get('/products/:id', async (req, res) => {
   res.render('products/Show', { product });
 });
 
-//products/:id/edit (get)
+// Edit Page
 app.get('/products/:id/edit', async (req, res) => {
   // console.log('edit page', req.params.id);
   const product = await Products.findById(req.params.id);
