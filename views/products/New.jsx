@@ -3,13 +3,6 @@ const {
   myStyle,
   navStyle,
   navlink,
-  styleUl,
-  styleTitle,
-  styleNumber,
-  styleDescription,
-  styleImage,
-  viewLink,
-  productContainer,
   companyName,
   buttonStyle,
   formContainer,
@@ -48,8 +41,7 @@ class New extends React.Component {
               <input style={inputStyle} type="text" name="product[image]" />
             </div>
             <div>
-              <label htmlFor="price">Trip Price</label>
-              <span>$</span>
+              <label htmlFor="price">Price</label>
               <input
                 style={inputStyle}
                 type="number"
@@ -58,7 +50,7 @@ class New extends React.Component {
               />
             </div>
             <div>
-              <label htmlFor="price">Stock</label>
+              <label htmlFor="stock">Stock</label>
               <input
                 style={inputStyle}
                 type="number"

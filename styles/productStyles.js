@@ -17,7 +17,7 @@ const navStyle = {
 
 const navlink = {
   color: '#BC986A',
-  padding: '1em',
+  paddingLeft: '1em',
 };
 
 const styleUl = {
@@ -32,8 +32,6 @@ const styleTitle = {
 const styleNumber = {
   color: '#DAAD86',
 };
-
-const styleDescription = {};
 
 const styleImage = {
   width: '500px',
@@ -108,7 +106,6 @@ module.exports = {
   styleUl,
   styleTitle,
   styleNumber,
-  styleDescription,
   styleImage,
   viewLink,
   productContainer,
