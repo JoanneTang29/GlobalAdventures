@@ -57,7 +57,7 @@ app.put('/products/:id', async (req, res) => {
 
 // Delete product
 app.delete('/products/:id', async (req, res) => {
-  console.log('delete');
+  console.log('deleted');
   const product = await Products.findByIdAndDelete(req.params.id);
   res.redirect('/products');
 });

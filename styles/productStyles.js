@@ -3,11 +3,12 @@ const myStyle = {
   backgroundColor: '#659DBD',
   fontFamily: 'tahoma',
   fontSize: '16pt',
+  paddingBottom: '3em',
 };
 
 const navStyle = {
   backgroundColor: '#FFFFFF',
-  paddingTop: '2em',
+  paddingTop: '1em',
   paddingBottom: '1em',
   paddingLeft: '2em',
   position: 'fixed',
@@ -22,10 +23,11 @@ const navlink = {
 
 const styleUl = {
   listStyleType: 'none',
+  padding: '0',
 };
 
 const styleTitle = {
-  fontSize: '30pt',
+  fontSize: '25pt',
   fontWeight: 'bold',
 };
 
@@ -38,6 +40,12 @@ const styleImage = {
   height: 'auto',
 };
 
+const styleDescription = {
+  paddingLeft: '20%',
+  paddingRight: '20%',
+  textAlign: 'left',
+};
+
 const viewLink = {
   backgroundColor: '#FFFFFF',
   color: '#659DBD',
@@ -46,8 +54,8 @@ const viewLink = {
 const productContainer = {
   display: 'flexbox',
   textAlign: 'center',
-  padding: '2em',
-  marginTop: '4em',
+  paddingTop: '4em',
+  width: '100%',
 };
 
 const companyName = {
@@ -58,7 +66,6 @@ const companyName = {
 };
 
 const buttonStyle = {
-  marginTop: '1em',
   width: '200px',
   height: '40px',
   fontSize: '20px',
@@ -100,6 +107,7 @@ module.exports = {
   styleTitle,
   styleNumber,
   styleImage,
+  styleDescription,
   viewLink,
   productContainer,
   companyName,

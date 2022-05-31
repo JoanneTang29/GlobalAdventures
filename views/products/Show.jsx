@@ -6,6 +6,7 @@ const {
   styleTitle,
   styleNumber,
   styleImage,
+  styleDescription,
   productContainer,
   companyName,
   buttonStyle,
@@ -39,10 +40,10 @@ class Show extends React.Component {
             {isOutOfStock ? (
               <p>Out of stock</p>
             ) : (
-              <p style={styleNumber}>Stock: {product.stock}</p>
+              <p style={styleNumber}>{product.stock} spots remaining</p>
             )}
           </div>
-          <p>{product.description}</p>
+          <p style={styleDescription}>{product.description}</p>
           <div>
             {isOutOfStock ? null : <button style={buttonStyle}>BUY</button>}
           </div>

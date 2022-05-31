@@ -9,8 +9,8 @@ const {
   styleUl,
   styleTitle,
   styleNumber,
-  styleDescription,
   styleImage,
+  styleDescription,
   viewLink,
   productContainer,
   companyName,
@@ -51,7 +51,7 @@ class Index extends React.Component {
                   <span style={styleNumber}>Price: ${products.price}</span>
                 </li>
                 <li>
-                  <span style={styleDescription}>{products.description}</span>
+                  <p style={styleDescription}>{products.description}</p>
                 </li>
                 <li>
                   <button style={buttonStyle}>
