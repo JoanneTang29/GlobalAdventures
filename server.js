@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const bootstrap = require('react-bootstrap');
 
 // Import dotenv in order to connect to our database
 const dotenv = require('dotenv');
