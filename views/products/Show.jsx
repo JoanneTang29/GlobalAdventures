@@ -13,10 +13,13 @@ const {
   productContainer,
   companyName,
   buttonStyle,
+  buttonBuy,
+  buttonDelete,
 } = require('../../styles/productStyles');
 class Show extends React.Component {
   render() {
     const { product } = this.props;
+    const isOutOfStock = product.stock === 0;
     console.log('product', product);
     return (
       <div style={myStyle}>
@@ -37,17 +40,28 @@ class Show extends React.Component {
           </p>
           <img style={styleImage} src={product.image}></img>
           <p style={styleNumber}>Price: ${product.price}</p>
-          <p style={styleNumber}>Stock: {product.stock}</p>
+          <div>
+            {isOutOfStock ? (
+              <p>Out of stock</p>
+            ) : (
+              <p style={styleNumber}>Stock: {product.stock}</p>
+            )}
+          </div>
           <p>{product.description}</p>
+          <div>
+            {isOutOfStock ? null : <button style={buttonBuy}>BUY</button>}
+          </div>
           <p>
-            <a href={`/products/${product._id}/edit`}>EDIT</a>
+            <a href={`/products/${product._id}/edit`}>Edit this Trip</a>
           </p>
           <p>
             <form
               action={`/products/${product._id}?_method=DELETE`}
               method="POST"
             >
-              <button type="submit">DELETE</button>
+              <button type="submit" style={buttonDelete}>
+                DELETE
+              </button>
             </form>
           </p>
           <a href="../products">BACK</a>

@@ -70,28 +70,24 @@ class New extends React.Component {
               <label className="form-label" htmlFor="price">
                 Trip Price
               </label>
-              <div>
-                <span>$</span>
-                <input
-                  type="number"
-                  className="form-control"
-                  placeholder="0.00"
-                  name="product[price]"
-                />
-              </div>
+              <span>$</span>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="0.00"
+                name="product[price]"
+              />
             </div>
             <div>
               <label className="form-label" htmlFor="price">
                 Stock
               </label>
-              <div>
-                <input
-                  type="number"
-                  className="form-control"
-                  placeholder="0"
-                  name="product[stock]"
-                />
-              </div>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="0"
+                name="product[stock]"
+              />
             </div>
             <div>
               <label className="form-label" htmlFor="description">

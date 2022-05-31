@@ -17,7 +17,7 @@ const navStyle = {
 
 const navlink = {
   color: '#BC986A',
-  padding: '10px',
+  padding: '1em',
 };
 
 const styleUl = {
@@ -36,7 +36,7 @@ const styleNumber = {
 const styleDescription = {};
 
 const styleImage = {
-  width: '540px',
+  width: '500px',
   height: 'auto',
 };
 
@@ -49,11 +49,14 @@ const productContainer = {
   display: 'flexbox',
   textAlign: 'center',
   padding: '2em',
-  marginTop: '3em',
+  marginTop: '4em',
 };
 
 const companyName = {
   color: 'black',
+  fontFamily: 'impact',
+  fontWeight: 'bold',
+  fontSize: '25pt',
 };
 
 const buttonStyle = {
@@ -68,6 +71,22 @@ const buttonStyle = {
 
 const formContainer = {
   padding: '4em',
+  lineHeight: '30px',
+};
+
+const buttonBuy = {
+  width: '150px',
+  height: '60px',
+  borderRadius: '10px',
+  fontSize: '16pt',
+};
+
+const buttonDelete = {
+  width: '150px',
+  height: '40px',
+  backgroundColor: 'red',
+  border: 'none',
+  fontSize: '16pt',
 };
 
 module.exports = {
@@ -84,4 +103,6 @@ module.exports = {
   companyName,
   buttonStyle,
   formContainer,
+  buttonBuy,
+  buttonDelete,
 };
