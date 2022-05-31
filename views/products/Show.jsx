@@ -8,7 +8,7 @@ const {
   styleImage,
   productContainer,
   companyName,
-  buttonBuy,
+  buttonStyle,
   buttonDelete,
 } = require('../../styles/productStyles');
 class Show extends React.Component {
@@ -44,7 +44,7 @@ class Show extends React.Component {
           </div>
           <p>{product.description}</p>
           <div>
-            {isOutOfStock ? null : <button style={buttonBuy}>BUY</button>}
+            {isOutOfStock ? null : <button style={buttonStyle}>BUY</button>}
           </div>
           <p>
             <a href={`/products/${product._id}/edit`}>Edit this Trip</a>

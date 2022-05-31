@@ -34,7 +34,7 @@ const styleNumber = {
 };
 
 const styleImage = {
-  width: '500px',
+  width: '540px',
   height: 'auto',
 };
 
@@ -72,13 +72,6 @@ const formContainer = {
   lineHeight: '30px',
 };
 
-const buttonBuy = {
-  width: '150px',
-  height: '60px',
-  borderRadius: '10px',
-  fontSize: '16pt',
-};
-
 const buttonDelete = {
   width: '150px',
   height: '40px',
@@ -112,7 +105,6 @@ module.exports = {
   companyName,
   buttonStyle,
   formContainer,
-  buttonBuy,
   buttonDelete,
   textareaStyle,
   inputStyle,
