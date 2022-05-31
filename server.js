@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// const bootstrap = require('react-bootstrap');
 
 // Import dotenv in order to connect to our database
 const dotenv = require('dotenv');
@@ -9,8 +10,6 @@ const adventureDB = require('./seed/index');
 dotenv.config({
   path: './config.env',
 });
-
-// console.log(process.env);
 
 //Import express application
 const app = require('./app');

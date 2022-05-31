@@ -2,54 +2,20 @@ const nodemon = require('nodemon');
 const React = require('react');
 const adventures = require('../../seed/adventures');
 const seedIndex = require('../../seed/index');
-
-const myStyle = {
-  color: '#ffffff',
-  backgroundColor: '#e76f51',
-  fontFamily: 'tahoma',
-  padding: '2em',
-};
-
-const linkStyle = {
-  display: 'none',
-};
-
-const navStyle = {
-  backgroundColor: 'yellow',
-  fontSize: '20px',
-  padding: '1em',
-};
-
-const navlink = {
-  textDecoration: 'none',
-  padding: '10px',
-};
-
-const styleUl = {
-  listStyleType: 'none',
-};
-
-const styleTitle = {
-  fontSize: '40px',
-};
-
-const styleLocation = {
-  color: 'gray',
-  fontSize: '30px',
-};
-
-const styleNumber = {
-  color: 'green',
-};
-
-const styleDescription = {
-  fontSize: '20px',
-};
-
-const styleImage = {
-  width: '540px',
-  height: 'auto',
-};
+const {
+  myStyle,
+  navStyle,
+  navlink,
+  styleUl,
+  styleTitle,
+  styleNumber,
+  styleDescription,
+  styleImage,
+  viewLink,
+  productContainer,
+  companyName,
+  buttonStyle,
+} = require('../../styles/productStyles');
 
 class Index extends React.Component {
   render() {
@@ -59,9 +25,7 @@ class Index extends React.Component {
       <div style={myStyle}>
         <nav style={navStyle}>
           <div>
-            <a style={navlink} href="#">
-              Global Adventure
-            </a>
+            <span style={companyName}>Global Adventures</span>
             <a style={navlink} href="/products">
               Trips
             </a>
@@ -70,29 +34,31 @@ class Index extends React.Component {
             </a>
           </div>
         </nav>
-        <h1>All Trips</h1>
+        <h1></h1>
         <ul style={styleUl}>
           {products.map((products, i) => {
             return (
-              <div>
+              <div style={productContainer}>
                 <li>
                   <img style={styleImage} src={products.image}></img>
                 </li>
                 <li>
-                  <span style={styleTitle}>{products.title}</span>
+                  <span style={styleTitle}>
+                    {products.title} in {products.location}
+                  </span>
                 </li>
                 <li>
-                  <span style={styleLocation}>{products.location}</span>
+                  <span style={styleNumber}>Price: ${products.price}</span>
                 </li>
-                <li>
-                  <span style={styleNumber}>Price: {products.price}</span>
-                </li>
-                {/* <li><span style={styleNumber}>Stock: {products.stock}</span></li> */}
                 <li>
                   <span style={styleDescription}>{products.description}</span>
                 </li>
                 <li>
-                  <a href={`/products/${products._id}`}>View Trip</a>
+                  <button style={buttonStyle}>
+                    <a href={`/products/${products._id}`} style={viewLink}>
+                      View Trip
+                    </a>
+                  </button>
                 </li>
               </div>
             );

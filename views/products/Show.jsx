@@ -1,48 +1,57 @@
 const React = require('react');
-
-const myStyle = {
-  color: '#ffffff',
-  backgroundColor: '#e63946',
-};
-
-const linkStyle = {
-  fontSize: '15pt',
-};
-
-const styleImage = {
-  width: '540px',
-  height: 'auto',
-};
-
+const Button = require('react-bootstrap/Button');
+const {
+  myStyle,
+  navStyle,
+  navlink,
+  styleUl,
+  styleTitle,
+  styleNumber,
+  styleDescription,
+  styleImage,
+  viewLink,
+  productContainer,
+  companyName,
+  buttonStyle,
+} = require('../../styles/productStyles');
 class Show extends React.Component {
   render() {
     const { product } = this.props;
     console.log('product', product);
     return (
       <div style={myStyle}>
-        <h1>Product Page</h1>
-        <img style={styleImage} src={product.image}></img>
-        <p>
-          {product.title} in {product.location}
-        </p>
-        <p>Price per person: {product.price}</p>
-        <p>Stock: {product.stock}</p>
-        <p>{product.description}</p>
-        <p>
-          <a href={`/products/${product._id}/edit`}>Edit</a>
-        </p>
-        <p>
-          <form
-            action={`/products/${product._id}?_method=DELETE`}
-            method="POST"
-          >
-            <button type="submit">DELETE</button>
-          </form>
-        </p>
-        <br></br>
-        <a href="../products" style={linkStyle}>
-          BACK
-        </a>
+        <nav style={navStyle}>
+          <div>
+            <span style={companyName}>Global Adventures</span>
+            <a style={navlink} href="/products">
+              Trips
+            </a>
+            <a style={navlink} href="/products/new">
+              Add Trip
+            </a>
+          </div>
+        </nav>
+        <div style={productContainer}>
+          <p style={styleTitle}>
+            {product.title} in {product.location}
+          </p>
+          <img style={styleImage} src={product.image}></img>
+          <p style={styleNumber}>Price: ${product.price}</p>
+          <p style={styleNumber}>Stock: {product.stock}</p>
+          <p>{product.description}</p>
+          <p>
+            <a href={`/products/${product._id}/edit`}>EDIT</a>
+          </p>
+          <p>
+            <form
+              action={`/products/${product._id}?_method=DELETE`}
+              method="POST"
+            >
+              <button type="submit">DELETE</button>
+            </form>
+          </p>
+          <a href="../products">BACK</a>
+        </div>
       </div>
     );
   }

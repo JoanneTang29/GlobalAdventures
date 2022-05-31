@@ -4,6 +4,7 @@ const app = express();
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const Products = require('./models/products');
+// const bootstrap = require('react-bootstrap');
 
 // // Create a middleware to parse the request body
 // app.use(express.json());
