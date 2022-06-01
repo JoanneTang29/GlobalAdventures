@@ -33,6 +33,8 @@ const styleTitle = {
 
 const styleNumber = {
   color: '#DAAD86',
+  margin: '0',
+  padding: '0',
 };
 
 const styleImage = {
@@ -42,9 +44,9 @@ const styleImage = {
 };
 
 const styleDescription = {
-  paddingLeft: '20%',
-  paddingRight: '20%',
+  display: 'inline-block',
   textAlign: 'left',
+  width: '500px',
 };
 
 const viewLink = {
@@ -91,14 +93,22 @@ const buttonDelete = {
 
 const textareaStyle = {
   fontFamily: 'tahoma',
-  width: '200px',
-  height: '100px',
+  fontSize: '14pt',
+  width: '300px',
+  height: '150px',
   marginLeft: '10px',
 };
 
 const inputStyle = {
-  height: '20px',
+  height: '25px',
   marginLeft: '10px',
+  fontSize: '14pt',
+};
+
+const globeLogo = {
+  width: '50px',
+  height: 'auto',
+  paddingRight: '10px',
 };
 
 module.exports = {
@@ -118,4 +128,5 @@ module.exports = {
   buttonDelete,
   textareaStyle,
   inputStyle,
+  globeLogo,
 };

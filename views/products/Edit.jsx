@@ -8,6 +8,7 @@ const {
   formContainer,
   textareaStyle,
   inputStyle,
+  globeLogo,
 } = require('../../styles/productStyles');
 class Edit extends React.Component {
   render() {
@@ -17,7 +18,15 @@ class Edit extends React.Component {
       <div style={myStyle}>
         <nav style={navStyle}>
           <div>
-            <span style={companyName}>Global Adventures</span>
+            <span style={companyName}>
+              {' '}
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTor262ZF8H31DsUgrs_cZBkFa1vkklpM3J6A&usqp=CAU"
+                alt=""
+                style={globeLogo}
+              />
+              Global Adventures
+            </span>
             <a style={navlink} href="/products">
               Trips
             </a>
