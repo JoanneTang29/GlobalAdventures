@@ -38,6 +38,7 @@ const styleNumber = {
 const styleImage = {
   width: '540px',
   height: 'auto',
+  border: 'black 2px solid',
 };
 
 const styleDescription = {
@@ -49,6 +50,7 @@ const styleDescription = {
 const viewLink = {
   backgroundColor: '#FFFFFF',
   color: '#659DBD',
+  textDecoration: 'none',
 };
 
 const productContainer = {
