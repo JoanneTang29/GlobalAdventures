@@ -16,7 +16,7 @@ const {
 class Show extends React.Component {
   render() {
     const { product } = this.props;
-    const isOutOfStock = product.stock === 0;
+    const isOutOfStock = product.stock === 0 || product.stock === null;
     console.log('product', product);
     return (
       <div style={myStyle}>

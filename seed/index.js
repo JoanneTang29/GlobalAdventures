@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const adventures = require('./adventures');
 const Products = require('../models/products');
 
-const adventuresDB = async () => {
+const deleteCreateSaveDB = async () => {
   // console.log('adventures db function');
   await Products.deleteMany({});
   for (let i = 0; i < adventures.length; i++) {
@@ -20,9 +20,4 @@ const adventuresDB = async () => {
   }
 };
 
-// adventuresDB().then(() => {
-//   console.log('db loaded here');
-//   // mongoose.connection;
-// });
-
-module.exports = adventuresDB;
+module.exports = deleteCreateSaveDB;
