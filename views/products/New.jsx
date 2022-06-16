@@ -1,39 +1,18 @@
 const React = require('react');
+const Nav = require('./../components/Nav');
 const {
   myStyle,
-  navStyle,
-  navlink,
-  companyName,
   buttonStyle,
   formContainer,
   textareaStyle,
   inputStyle,
-  globeLogo,
 } = require('../../styles/productStyles');
 class New extends React.Component {
   render() {
     const { products } = this.props;
     return (
       <div style={myStyle}>
-        <nav style={navStyle}>
-          <div>
-            <span style={companyName}>
-              {' '}
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTor262ZF8H31DsUgrs_cZBkFa1vkklpM3J6A&usqp=CAU"
-                alt=""
-                style={globeLogo}
-              />
-              Global Adventures
-            </span>
-            <a style={navlink} href="/products">
-              Trips
-            </a>
-            <a style={navlink} href="/products/new">
-              Add Trip
-            </a>
-          </div>
-        </nav>
+        <Nav />
         <div style={formContainer}>
           <h1>Add Trip</h1>
           <form action={'/products'} method="POST">

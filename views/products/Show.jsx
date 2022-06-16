@@ -1,44 +1,25 @@
 const React = require('react');
+const { useState } = require('react');
+const Nav = require('./../components/Nav');
 const {
   myStyle,
-  navStyle,
-  navlink,
   styleTitle,
   styleNumber,
   styleImage,
   styleDescription,
   productContainer,
-  companyName,
   buttonStyle,
   buttonDelete,
-  globeLogo,
 } = require('../../styles/productStyles');
+
 class Show extends React.Component {
   render() {
     const { product } = this.props;
     const isOutOfStock = product.stock === 0 || product.stock === null;
-    console.log('product', product);
+    // console.log('product', product);
     return (
       <div style={myStyle}>
-        <nav style={navStyle}>
-          <div>
-            <span style={companyName}>
-              {' '}
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTor262ZF8H31DsUgrs_cZBkFa1vkklpM3J6A&usqp=CAU"
-                alt=""
-                style={globeLogo}
-              />
-              Global Adventures
-            </span>
-            <a style={navlink} href="/products">
-              Trips
-            </a>
-            <a style={navlink} href="/products/new">
-              Add Trip
-            </a>
-          </div>
-        </nav>
+        <Nav />
         <div style={productContainer}>
           <p style={styleTitle}>
             {product.title} in {product.location}
@@ -53,6 +34,7 @@ class Show extends React.Component {
             )}
           </div>
           <p style={styleDescription}>{product.description}</p>
+          {/* <Calendar /> */}
           <div>
             {isOutOfStock ? null : <button style={buttonStyle}>BUY</button>}
           </div>
