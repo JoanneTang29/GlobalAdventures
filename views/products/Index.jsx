@@ -1,11 +1,10 @@
 const nodemon = require('nodemon');
 const React = require('react');
 const adventures = require('../../seed/adventures');
+const Nav = require('./../components/Nav');
 const seedIndex = require('../../seed/index');
 const {
   myStyle,
-  navStyle,
-  navlink,
   styleUl,
   styleTitle,
   styleNumber,
@@ -13,9 +12,7 @@ const {
   styleDescription,
   viewLink,
   productContainer,
-  companyName,
   buttonStyle,
-  globeLogo,
 } = require('../../styles/productStyles');
 
 class Index extends React.Component {
@@ -24,25 +21,7 @@ class Index extends React.Component {
     // console.log('products index jsx', products);
     return (
       <div style={myStyle}>
-        <nav style={navStyle}>
-          <div>
-            <span style={companyName}>
-              {' '}
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTor262ZF8H31DsUgrs_cZBkFa1vkklpM3J6A&usqp=CAU"
-                alt=""
-                style={globeLogo}
-              />
-              Global Adventures
-            </span>
-            <a style={navlink} href="/products">
-              Trips
-            </a>
-            <a style={navlink} href="/products/new">
-              Add Trip
-            </a>
-          </div>
-        </nav>
+        <Nav />
         <h1></h1>
         <ul style={styleUl}>
           {products.map((products, i) => {
