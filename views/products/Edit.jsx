@@ -19,6 +19,7 @@ class Edit extends React.Component {
           <form action={`/products/${product._id}/?_method=PUT`} method="POST">
             <div>
               <label htmlFor="title">Title</label>
+              <br></br>
               <input
                 style={inputStyle}
                 type="text"
@@ -28,6 +29,7 @@ class Edit extends React.Component {
             </div>
             <div>
               <label htmlFor="location">Location</label>
+              <br></br>
               <input
                 style={inputStyle}
                 type="text"
@@ -37,6 +39,7 @@ class Edit extends React.Component {
             </div>
             <div>
               <label htmlFor="image">Image</label>
+              <br></br>
               <input
                 style={inputStyle}
                 type="text"
@@ -46,6 +49,7 @@ class Edit extends React.Component {
             </div>
             <div>
               <label htmlFor="price">Price</label>
+              <br></br>
               <input
                 style={inputStyle}
                 type="number"
@@ -55,6 +59,7 @@ class Edit extends React.Component {
             </div>
             <div>
               <label htmlFor="stock">Stock</label>
+              <br></br>
               <input
                 style={inputStyle}
                 type="number"
@@ -64,6 +69,7 @@ class Edit extends React.Component {
             </div>
             <div>
               <label htmlFor="description">Description</label>
+              <br></br>
               <textarea
                 style={textareaStyle}
                 type="text"

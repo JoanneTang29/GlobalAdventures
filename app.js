@@ -5,7 +5,6 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const Products = require('./models/products');
 const productRoutes = require('./routes/productRoute');
-const Calendar = require('react-calendar');
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.json());

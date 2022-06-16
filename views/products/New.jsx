@@ -18,18 +18,22 @@ class New extends React.Component {
           <form action={'/products'} method="POST">
             <div>
               <label htmlFor="title">Title</label>
+              <br></br>
               <input style={inputStyle} type="text" name="product[title]" />
             </div>
             <div>
               <label htmlFor="location">Location</label>
+              <br></br>
               <input style={inputStyle} type="text" name="product[location]" />
             </div>
             <div>
               <label htmlFor="image">Image Url</label>
+              <br></br>
               <input style={inputStyle} type="text" name="product[image]" />
             </div>
             <div>
               <label htmlFor="price">Price</label>
+              <br></br>
               <input
                 style={inputStyle}
                 type="number"
@@ -39,6 +43,7 @@ class New extends React.Component {
             </div>
             <div>
               <label htmlFor="stock">Stock</label>
+              <br></br>
               <input
                 style={inputStyle}
                 type="number"
@@ -48,6 +53,7 @@ class New extends React.Component {
             </div>
             <div>
               <label htmlFor="description">Description</label>
+              <br></br>
               <textarea
                 style={textareaStyle}
                 type="text"

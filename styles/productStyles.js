@@ -72,7 +72,7 @@ const companyName = {
 const buttonStyle = {
   width: '200px',
   height: '40px',
-  fontSize: '20px',
+  fontSize: '14pt',
   borderRadius: '30px',
   backgroundColor: '#FFFFFF',
   color: '#659DBD',
@@ -87,21 +87,20 @@ const buttonDelete = {
   width: '150px',
   height: '40px',
   backgroundColor: 'red',
-  border: 'none',
-  fontSize: '16pt',
+  color: 'white',
+  fontSize: '14pt',
 };
 
 const textareaStyle = {
   fontFamily: 'tahoma',
   fontSize: '14pt',
-  width: '300px',
+  width: '400px',
   height: '150px',
-  marginLeft: '10px',
 };
 
 const inputStyle = {
   height: '25px',
-  marginLeft: '10px',
+  width: '400px',
   fontSize: '14pt',
 };
 
