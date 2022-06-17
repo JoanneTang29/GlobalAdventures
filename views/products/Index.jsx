@@ -1,8 +1,6 @@
-const nodemon = require('nodemon');
 const React = require('react');
 const adventures = require('../../seed/adventures');
 const Nav = require('./../components/Nav');
-const seedIndex = require('../../seed/index');
 const {
   myStyle,
   styleUl,

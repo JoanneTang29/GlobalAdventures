@@ -9,6 +9,7 @@ const productRouter = express.Router();
 const productController = require('../controllers/productControllers');
 
 // Base route
+productRouter.route('/home/').get(productController.home);
 productRouter
   .route('/products/')
   .get(productController.getAllProducts)

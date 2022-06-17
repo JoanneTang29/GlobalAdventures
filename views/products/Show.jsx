@@ -1,5 +1,4 @@
 const React = require('react');
-const { useState } = require('react');
 const Nav = require('./../components/Nav');
 const {
   myStyle,

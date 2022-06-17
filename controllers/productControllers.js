@@ -2,6 +2,18 @@
 const Products = require('../models/products');
 
 // Refactor route controllers
+exports.home = async (req, res) => {
+  try {
+    const products = await Products.find({});
+    res.render('products/Home', { products });
+  } catch (error) {
+    res.status(500).json({
+      status: 'ERROR check home',
+      message: error,
+    });
+  }
+};
+
 // Retrieve all products at once
 exports.getAllProducts = async (req, res) => {
   try {
